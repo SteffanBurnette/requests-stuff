@@ -21,3 +21,15 @@ def get_char_count(text):
             myDict[c] += 1
 
     return myDict
+
+def sort_on(d: CharacterCount) -> int:
+    return d["num"]
+
+def chars_dict_on_sorted_list(num_chars_dict: dict[str, int]) -> list[CharacterCount]:
+    sorted_list: list[CharacterCount] = []
+
+    for ch in num_chars_dict:
+        sorted_list.append({"char": ch, "num": num_chars_dict[ch]})
+
+    sorted_list.sort(reverse = True, key = sort_on)
+    return sorted_list
